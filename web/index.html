@@ -164,12 +164,6 @@
   .callout b{color:var(--warn)} .callout p{color:var(--muted);font-size:13px;margin-top:3px}
   .disc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 15px;color:var(--muted);font-size:12.5px;margin-top:18px}
 
-  /* timeline */
-  .tl{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
-  .tl:last-child{border-bottom:none}
-  .tl .when{color:var(--accent);font-weight:800;font-size:13.5px}
-  .tl .what{color:var(--muted);font-size:13.5px} .tl .what b{color:var(--txt)}
-  @media(max-width:480px){.tl{grid-template-columns:1fr;gap:2px}}
 
   /* ================= MOBILE TAB BAR ================= */
   .tabbar{display:none}
@@ -198,7 +192,7 @@
 
   <!-- ============ SIDEBAR ============ -->
   <aside class="sidebar">
-    <div class="brand"><div class="logo">b</div><div class="name"><b>buff</b></div></div>
+    <div class="brand"><div class="name"><b>buff</b></div></div>
     <button class="navbtn active" data-view="overview">
       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
       Overview
@@ -211,19 +205,10 @@
       <svg viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 1 9-9"/><path d="M12 12l4-3"/><path d="M12 7v.01"/><path d="M7 12h.01M17 12h.01"/></svg>
       Loads
     </button>
-    <button class="navbtn" data-view="nutrition">
-      <svg viewBox="0 0 24 24"><path d="M12 3c1.5 3-1 4.5-1 7a3.2 3.2 0 0 0 6.4.2c0-1.2-.5-2.2-.9-2.9C18.7 9 20 11.4 20 14a8 8 0 0 1-16 0c0-4 3-6.5 4-8 .8 1 1.5 1.6 4 3-.4-3 0-4.8 0-6z"/></svg>
-      Nutrition
-    </button>
     <button class="navbtn" data-view="equipment">
       <svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
       Equipment
     </button>
-    <button class="navbtn" data-view="timeline">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-      Timeline
-    </button>
-    <div class="foot">5 days / week · lean-bulk<br>Push · Pull · Legs · Upper · Lower</div>
   </aside>
 
   <!-- ============ MAIN ============ -->
@@ -384,29 +369,6 @@
       </div>
     </section>
 
-    <!-- ===== NUTRITION ===== -->
-    <section class="view" data-screen="nutrition">
-      <div class="screenhead"><h1>Nutrition</h1><span class="tag">the real bottleneck</span></div>
-      <div class="pad">
-        <p class="sub">You can run the perfect program and grow almost nothing without a surplus. Add weight slowly; if you're gaining faster than ~0.5 kg / 1 lb a week, trim calories a touch.</p>
-        <div class="grid cols-2">
-          <div class="card"><div class="kv">Daily protein (example)</div>
-            <p style="margin-top:6px">At <b>70 kg / 154 lb</b> → <b>130–150 g/day</b>. Chicken, eggs, dairy, whey, beef, fish, legumes.</p>
-            <p style="margin-top:8px;color:var(--dim);font-size:12.5px">Give the coach your bodyweight + height for exact numbers.</p></div>
-          <div class="card"><div class="kv">Weekly weigh-in goal</div>
-            <div class="stat good" style="margin:4px 0">+0.25–0.5 kg</div>
-            <p>= <b>+0.5–1 lb</b> / week. Weigh 3–4×/week, same time; track the <b>weekly average</b>, not daily noise.</p></div>
-        </div>
-
-        <div class="blocktitle">How you actually grow</div>
-        <div class="grid cols-3">
-          <div class="card"><h3>Log everything</h3><p>Weight × reps each set. Progress over weeks is the whole game.</p></div>
-          <div class="card"><h3>Double progression</h3><p>Top of the rep range on all sets → add load (~2.5–5 kg / 5–10 lb), reset to bottom, climb again.</p></div>
-          <div class="card"><h3>Prioritise the look</h3><p>Side delts &amp; upper back build the V-taper — laterals &amp; face pulls twice a week.</p></div>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== EQUIPMENT ===== -->
     <section class="view" data-screen="equipment">
       <div class="screenhead"><h1>Equipment</h1><span class="tag">from 18 photos</span></div>
@@ -444,17 +406,6 @@
       </div>
     </section>
 
-    <!-- ===== TIMELINE ===== -->
-    <section class="view" data-screen="timeline">
-      <div class="screenhead"><h1>Timeline</h1><span class="tag">what to expect</span></div>
-      <div class="pad">
-        <div class="tl"><div class="when">Weeks 6–10</div><div class="what"><b>First visible change.</b> Better pumps, clothes fit differently, strength climbs fast (beginner gains).</div></div>
-        <div class="tl"><div class="when">~6 months</div><div class="what"><b>Noticeably more built.</b> Shoulders and chest fill out; the taper starts to show.</div></div>
-        <div class="tl"><div class="when">12–24 months</div><div class="what"><b>The goal physique.</b> A lean, athletic build is realistically a 1–2 year natural lean-bulk — very achievable with consistency.</div></div>
-        <div class="disc">General fitness guidance, not medical advice. If you have any injuries or health conditions, clear a new program with a doctor first.</div>
-      </div>
-    </section>
-
   </main>
 </div>
 
@@ -463,9 +414,7 @@
   <button class="active" data-view="overview"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Home</button>
   <button data-view="routine"><svg viewBox="0 0 24 24"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>Routine</button>
   <button data-view="loads"><svg viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 1 9-9"/><path d="M12 12l4-3"/><path d="M12 7v.01"/><path d="M7 12h.01M17 12h.01"/></svg>Loads</button>
-  <button data-view="nutrition"><svg viewBox="0 0 24 24"><path d="M12 3c1.5 3-1 4.5-1 7a3.2 3.2 0 0 0 6.4.2c0-1.2-.5-2.2-.9-2.9C18.7 9 20 11.4 20 14a8 8 0 0 1-16 0c0-4 3-6.5 4-8 .8 1 1.5 1.6 4 3-.4-3 0-4.8 0-6z"/></svg>Fuel</button>
   <button data-view="equipment"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>Gear</button>
-  <button data-view="timeline"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Goal</button>
 </nav>
 
 <!-- ============ EXERCISE DEMO MODAL ============ -->
