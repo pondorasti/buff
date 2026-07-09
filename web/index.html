@@ -131,7 +131,8 @@
   .animbox .hint{color:var(--dim);font-size:11px;padding:6px 4px 2px;line-height:1.4}
   .animbox .hint a{color:var(--muted)}
 
-  .gear-table tr.grouprow td{background:var(--panel-2);color:var(--accent-2);font-size:10.5px;font-weight:800;
+  /* load-target group header rows */
+  tr.grouprow td{background:var(--panel-2);color:var(--accent-2);font-size:10.5px;font-weight:800;
     text-transform:uppercase;letter-spacing:.09em;padding:9px 15px}
 
   /* equipment gallery */
@@ -142,8 +143,6 @@
   .gcard .body{padding:11px 12px 12px}
   .gcard .nm{font-size:13.5px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
   .gcard .br{color:var(--muted);font-size:12px;margin-top:2px}
-  .gcard .ct{display:inline-block;margin-top:8px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
-    color:var(--accent-2);background:rgba(125,227,255,.09);border:1px solid rgba(125,227,255,.2);padding:2px 7px;border-radius:6px}
 
   /* day tabs */
   .daytabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:4px;margin-bottom:16px;-webkit-overflow-scrolling:touch}
@@ -251,75 +250,8 @@
       <div class="pad">
         <p class="sub">Stop each set <b>1–2 reps short of failure</b>. Control the lowering (~2–3 sec). <span class="star">★</span> = weak-point priority (delts &amp; upper back = the “built” look, fastest). <b>Tap any exercise ▶</b> for an animated demo with the muscles worked.</p>
 
-        <div class="daytabs" id="daytabs">
-          <div class="dtab active" data-day="d1"><span>Push</span><small>CHEST·SHLDR·TRI</small></div>
-          <div class="dtab" data-day="d2"><span>Pull</span><small>BACK·BI·R.DELT</small></div>
-          <div class="dtab" data-day="d3"><span>Legs</span><small>QUAD·HAM·CALF</small></div>
-          <div class="dtab" data-day="d4"><span>Upper</span><small>DELT/ARM</small></div>
-          <div class="dtab" data-day="d5"><span>Lower+</span><small>LEG·ARM·CORE</small></div>
-        </div>
-
-        <div class="day active" id="d1">
-          <div class="daymeta"><span>~<b>22 sets</b></span><span>~<b>55–65 min</b></span></div>
-          <table><thead><tr><th>Exercise</th><th>Equipment</th><th>Sets × Reps</th></tr></thead><tbody>
-            <tr data-anim="bench-press"><td class="ex"><span class="exn">Barbell Bench Press</span><span class="submus"><b>Chest</b> · Triceps, Shoulders</span></td><td class="mac">Freedom Rack</td><td class="sets">4 × 5–8</td></tr>
-            <tr data-anim="incline-db-press"><td class="ex"><span class="exn">Incline DB Press</span><span class="submus"><b>Upper chest</b> · Shoulders</span></td><td class="mac">FUEL bench + dumbbells</td><td class="sets">3 × 8–12</td></tr>
-            <tr data-anim="cable-flye"><td class="ex"><span class="exn">Cable Flye</span><span class="submus"><b>Chest</b> · Front delts</span></td><td class="mac">Nautilus functional trainer</td><td class="sets">3 × 12–15</td></tr>
-            <tr data-anim="overhead-press"><td class="ex"><span class="exn">Overhead Press</span><span class="submus"><b>Delts</b> · Triceps</span></td><td class="mac">Technogym OH Press</td><td class="sets">3 × 8–12</td></tr>
-            <tr data-anim="lateral-raise"><td class="ex"><span class="exn"><span class="star">★</span> Cable Lateral Raise</span><span class="submus"><b>Side delts</b></span></td><td class="mac">Nautilus, single-arm</td><td class="sets">4 × 12–20</td></tr>
-            <tr data-anim="triceps-pushdown"><td class="ex"><span class="exn">Rope Triceps Pushdown</span><span class="submus"><b>Triceps</b></span></td><td class="mac">Nautilus cable</td><td class="sets">3 × 10–15</td></tr>
-            <tr data-anim="overhead-triceps"><td class="ex"><span class="exn">Overhead Cable Triceps Ext.</span><span class="submus"><b>Triceps</b> · long head</span></td><td class="mac">Nautilus cable</td><td class="sets">2 × 12–15</td></tr>
-          </tbody></table>
-        </div>
-
-        <div class="day" id="d2">
-          <div class="daymeta"><span>~<b>20 sets</b></span><span>~<b>50–60 min</b></span></div>
-          <table><thead><tr><th>Exercise</th><th>Equipment</th><th>Sets × Reps</th></tr></thead><tbody>
-            <tr data-anim="barbell-row"><td class="ex"><span class="exn">Barbell Row</span><span class="submus"><b>Upper back</b> · Biceps</span></td><td class="mac">Freedom Rack</td><td class="sets">4 × 6–10</td></tr>
-            <tr data-anim="lat-pulldown"><td class="ex"><span class="exn">Lat Pulldown</span><span class="submus"><b>Lats</b> · Biceps</span></td><td class="mac">Technogym High Pull</td><td class="sets">4 × 8–12</td></tr>
-            <tr data-anim="seated-row"><td class="ex"><span class="exn">Seated Row</span><span class="submus"><b>Mid back</b> · Biceps</span></td><td class="mac">Technogym Low Pull</td><td class="sets">3 × 8–12</td></tr>
-            <tr data-anim="face-pull"><td class="ex"><span class="exn"><span class="star">★</span> Face Pull</span><span class="submus"><b>Rear delts</b> · Traps</span></td><td class="mac">Nautilus cable (rope)</td><td class="sets">3 × 15–20</td></tr>
-            <tr data-anim="incline-curl"><td class="ex"><span class="exn">Incline DB Curl</span><span class="submus"><b>Biceps</b></span></td><td class="mac">FUEL bench + dumbbells</td><td class="sets">3 × 10–12</td></tr>
-            <tr data-anim="hammer-curl"><td class="ex"><span class="exn">Hammer / Rope Curl</span><span class="submus"><b>Biceps</b> · Forearms</span></td><td class="mac">Dumbbells or cable</td><td class="sets">3 × 10–12</td></tr>
-          </tbody></table>
-        </div>
-
-        <div class="day" id="d3">
-          <div class="daymeta"><span>~<b>17 sets</b></span><span>~<b>50–60 min</b></span></div>
-          <table><thead><tr><th>Exercise</th><th>Equipment</th><th>Sets × Reps</th></tr></thead><tbody>
-            <tr data-anim="squat"><td class="ex"><span class="exn">Barbell Squat</span><span class="submus"><b>Quads</b> · Glutes, Hams</span></td><td class="mac">Freedom Rack</td><td class="sets">4 × 5–8</td></tr>
-            <tr data-anim="leg-press"><td class="ex"><span class="exn">Leg Press</span><span class="submus"><b>Quads</b> · Glutes</span></td><td class="mac">Technogym Leg Press</td><td class="sets">3 × 10–12</td></tr>
-            <tr data-anim="leg-extension"><td class="ex"><span class="exn">Leg Extension</span><span class="submus"><b>Quads</b></span></td><td class="mac">Technogym</td><td class="sets">3 × 12–15</td></tr>
-            <tr data-anim="leg-curl"><td class="ex"><span class="exn">Leg Curl</span><span class="submus"><b>Hamstrings</b></span></td><td class="mac">Technogym</td><td class="sets">3 × 10–12</td></tr>
-            <tr data-anim="calf-raise"><td class="ex"><span class="exn">Calf Raise</span><span class="submus"><b>Calves</b></span></td><td class="mac">Leg press / calf setting</td><td class="sets">4 × 12–20</td></tr>
-          </tbody></table>
-        </div>
-
-        <div class="day" id="d4">
-          <div class="daymeta"><span>~<b>23 sets</b></span><span>~<b>55–60 min</b></span></div>
-          <table><thead><tr><th>Exercise</th><th>Equipment</th><th>Sets × Reps</th></tr></thead><tbody>
-            <tr data-anim="overhead-press"><td class="ex"><span class="exn">Barbell Overhead Press</span><span class="submus"><b>Delts</b> · Triceps</span></td><td class="mac">Freedom Rack</td><td class="sets">4 × 6–10</td></tr>
-            <tr data-anim="lat-pulldown"><td class="ex"><span class="exn">Wide Lat Pulldown</span><span class="submus"><b>Lats</b> · Biceps</span></td><td class="mac">Technogym High Pull</td><td class="sets">3 × 10–12</td></tr>
-            <tr><td class="ex"><span class="exn">Incline Chest Press</span><span class="submus"><b>Upper chest</b> · Shoulders</span></td><td class="mac">Machine or FUEL bench</td><td class="sets">3 × 8–12</td></tr>
-            <tr data-anim="lateral-raise"><td class="ex"><span class="exn"><span class="star">★</span> Cable Lateral Raise</span><span class="submus"><b>Side delts</b></span></td><td class="mac">Nautilus cable</td><td class="sets">4 × 15–20</td></tr>
-            <tr data-anim="seated-row"><td class="ex"><span class="exn">Cable Row</span><span class="submus"><b>Mid back</b> · Biceps</span></td><td class="mac">Technogym Low Pull</td><td class="sets">3 × 10–12</td></tr>
-            <tr data-anim="incline-curl"><td class="ex"><span class="exn">Superset: Curl + Pushdown</span><span class="submus"><b>Biceps</b> · Triceps</span></td><td class="mac">Nautilus cable</td><td class="sets">3 × 12 ea</td></tr>
-            <tr data-anim="face-pull"><td class="ex"><span class="exn">Face Pull</span><span class="submus"><b>Rear delts</b> · Traps</span></td><td class="mac">Nautilus cable</td><td class="sets">3 × 20</td></tr>
-          </tbody></table>
-        </div>
-
-        <div class="day" id="d5">
-          <div class="daymeta"><span>~<b>22 sets</b></span><span>~<b>55–60 min</b></span></div>
-          <table><thead><tr><th>Exercise</th><th>Equipment</th><th>Sets × Reps</th></tr></thead><tbody>
-            <tr data-anim="rdl"><td class="ex"><span class="exn">Barbell Romanian Deadlift</span><span class="submus"><b>Hamstrings</b> · Glutes</span></td><td class="mac">Freedom Rack</td><td class="sets">4 × 6–10</td></tr>
-            <tr data-anim="leg-press"><td class="ex"><span class="exn">Leg Press (wide stance)</span><span class="submus"><b>Quads</b> · Glutes</span></td><td class="mac">Technogym</td><td class="sets">3 × 10–12</td></tr>
-            <tr data-anim="leg-curl"><td class="ex"><span class="exn">Leg Curl</span><span class="submus"><b>Hamstrings</b></span></td><td class="mac">Technogym</td><td class="sets">3 × 12</td></tr>
-            <tr data-anim="leg-extension"><td class="ex"><span class="exn">Leg Extension</span><span class="submus"><b>Quads</b></span></td><td class="mac">Technogym</td><td class="sets">3 × 15</td></tr>
-            <tr data-anim="calf-raise"><td class="ex"><span class="exn">Calf Raise</span><span class="submus"><b>Calves</b></span></td><td class="mac">Leg press / calf</td><td class="sets">4 × 15</td></tr>
-            <tr data-anim="hammer-curl"><td class="ex"><span class="exn">Arm Giant Set: Curl+Hammer+OH Tri</span><span class="submus"><b>Biceps</b> · Triceps</span></td><td class="mac">Cables / dumbbells</td><td class="sets">3–4 rds</td></tr>
-            <tr><td class="ex"><span class="exn">Core: Rollout · Knee Raise · Crunch</span><span class="submus"><b>Core</b> · Abs</span></td><td class="mac">Gym Rax rings, cable</td><td class="sets">3 × 10–15</td></tr>
-          </tbody></table>
-        </div>
+        <div class="daytabs" id="daytabs"></div>
+        <div id="days"></div>
 
         <div class="callout">
           <b>Freedom Rack = your new anchor</b>
@@ -336,26 +268,7 @@
 
         <table>
           <thead><tr><th>Lift</th><th>Trains</th><th>Start</th><th>3-mo target</th></tr></thead>
-          <tbody>
-            <tr class="grouprow"><td colspan="4">Barbell compounds — Freedom Rack</td></tr>
-            <tr><td class="ex">Bench Press</td><td class="mac">Chest</td><td class="sets">30 kg / 66 lb</td><td class="sets">60 kg / 132 lb</td></tr>
-            <tr><td class="ex">Squat</td><td class="mac">Quads / glutes</td><td class="sets">40 kg / 88 lb</td><td class="sets">80 kg / 176 lb</td></tr>
-            <tr data-anim="overhead-press"><td class="ex">Overhead Press</td><td class="mac">Shoulders</td><td class="sets">25 kg / 55 lb</td><td class="sets">40 kg / 88 lb</td></tr>
-            <tr data-anim="barbell-row"><td class="ex">Barbell Row</td><td class="mac">Back</td><td class="sets">35 kg / 77 lb</td><td class="sets">60 kg / 132 lb</td></tr>
-            <tr><td class="ex">Romanian Deadlift</td><td class="mac">Hams / glutes</td><td class="sets">40 kg / 88 lb</td><td class="sets">80 kg / 176 lb</td></tr>
-
-            <tr class="grouprow"><td colspan="4">Machine &amp; cable accessories</td></tr>
-            <tr data-anim="lat-pulldown"><td class="ex">Lat Pulldown</td><td class="mac">Back</td><td class="sets">35 kg / 77 lb</td><td class="sets">55 kg / 120 lb</td></tr>
-            <tr data-anim="seated-row"><td class="ex">Seated Row</td><td class="mac">Back</td><td class="sets">35 kg / 77 lb</td><td class="sets">55 kg / 120 lb</td></tr>
-            <tr data-anim="leg-press"><td class="ex">Leg Press</td><td class="mac">Quads</td><td class="sets">70 kg / 155 lb</td><td class="sets">140 kg / 310 lb</td></tr>
-            <tr data-anim="leg-extension"><td class="ex">Leg Extension</td><td class="mac">Quads</td><td class="sets">30 kg / 66 lb</td><td class="sets">55 kg / 120 lb</td></tr>
-            <tr data-anim="leg-curl"><td class="ex">Leg Curl</td><td class="mac">Hamstrings</td><td class="sets">25 kg / 55 lb</td><td class="sets">45 kg / 100 lb</td></tr>
-            <tr data-anim="calf-raise"><td class="ex">Calf Raise</td><td class="mac">Calves</td><td class="sets">40 kg / 88 lb</td><td class="sets">80 kg / 175 lb</td></tr>
-            <tr><td class="ex"><span class="star">★</span> Cable Lateral</td><td class="mac">Side delts · per arm</td><td class="sets">5 kg / 11 lb</td><td class="sets">9 kg / 20 lb</td></tr>
-            <tr data-anim="face-pull"><td class="ex"><span class="star">★</span> Face Pull</td><td class="mac">Rear delts</td><td class="sets">15 kg / 33 lb</td><td class="sets">27 kg / 60 lb</td></tr>
-            <tr><td class="ex">Curl</td><td class="mac">Biceps · cable/DB</td><td class="sets">10 kg / 22 lb</td><td class="sets">16 kg / 35 lb</td></tr>
-            <tr><td class="ex">Rope Pushdown</td><td class="mac">Triceps</td><td class="sets">15 kg / 33 lb</td><td class="sets">30 kg / 66 lb</td></tr>
-          </tbody>
+          <tbody id="loadsbody"></tbody>
         </table>
 
         <div class="callout">
@@ -373,35 +286,7 @@
       <div class="screenhead"><h1>Equipment</h1><span class="tag">from 18 photos</span></div>
       <div class="pad">
         <p class="sub">A Technogym-heavy setup with solid machine coverage, a barbell rack, plus a free-weight / functional corner. Photos are your own.</p>
-
-        <div class="blocktitle">Strength — Rack &amp; selectorized machines</div>
-        <div class="gallery">
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7605.jpg" alt="Freedom Rack"><div class="body"><div class="nm">Barbell rack + bench</div><div class="br">Nautilus · Smith/half-rack, Olympic bar + plates, bench</div></div></div>
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7589.jpg" alt="Chest / Overhead Press"><div class="body"><div class="nm">Chest Press / Overhead Press</div><div class="br">Technogym · dual</div></div></div>
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7588.jpg" alt="Leg Press / Calf"><div class="body"><div class="nm">Leg Press / Calf</div><div class="br">Technogym · dual</div></div></div>
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7592.jpg" alt="Leg Extension / Leg Curl"><div class="body"><div class="nm">Leg Extension / Leg Curl</div><div class="br">Technogym · dual</div></div></div>
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7603.jpg" alt="High Pull / Low Pull"><div class="body"><div class="nm">High Pull / Low Pull</div><div class="br">Technogym · pulldown + row</div></div></div>
-        </div>
-
-        <div class="blocktitle">Functional / cable &amp; bodyweight</div>
-        <div class="gallery">
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7583.jpg" alt="Functional trainers"><div class="body"><div class="nm">Dual functional trainers</div><div class="br">Nautilus Instinct · pair</div></div></div>
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7587.jpg" alt="Total Gym"><div class="body"><div class="nm">Bodyweight glideboard</div><div class="br">Incline rail trainer</div></div></div>
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7585.jpg" alt="Back-extension bench"><div class="body"><div class="nm">Back-extension bench</div><div class="br">45° frame</div></div></div>
-        </div>
-
-        <div class="blocktitle">Cardio</div>
-        <div class="gallery">
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7594.jpg" alt="Treadmills"><div class="body"><div class="nm">Treadmills ×2</div><div class="br">Star Trac</div></div></div>
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7596.jpg" alt="Stair climbers"><div class="body"><div class="nm">Stair climbers ×2</div><div class="br">StairMaster Gauntlet</div></div></div>
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7595.jpg" alt="Rowers"><div class="body"><div class="nm">Rowers ×2</div><div class="br">Rail + fan rower</div></div></div>
-        </div>
-
-        <div class="blocktitle">Free weights &amp; accessories</div>
-        <div class="gallery">
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7586.jpg" alt="FUEL bench"><div class="body"><div class="nm">Adjustable bench</div><div class="br">Flat / incline</div></div></div>
-          <div class="gcard"><img loading="lazy" src="thumbs/IMG_7604.jpg" alt="Gym Rax free-weight corner"><div class="body"><div class="nm">Functional rig + free weights</div><div class="br">Hex DBs (~10 kg / 22 lb), spin-lock DBs, kettlebell, wall/med balls (8 lb / 3.6 kg), 55 cm ball, rings, foam rollers, step, bands</div></div></div>
-        </div>
+        <div id="gallery"></div>
       </div>
     </section>
 
@@ -427,68 +312,106 @@
   </div>
 </div>
 
+<script src="data.js"></script>
 <script>
-  const views = document.querySelectorAll('.view');
-  const navs  = document.querySelectorAll('[data-view]');
+  const { equipment, exercises, days, loads, equipmentGroups } = window.DB;
+  const $ = id => document.getElementById(id);
+  const el = (tag, cls, html) => { const n=document.createElement(tag); if(cls)n.className=cls; if(html!=null)n.innerHTML=html; return n; };
+
+  // ---- data helpers (resolve an item against its exercise) ----
+  const exOf   = i => i.ex ? exercises[i.ex] : null;
+  const nameOf = i => i.name || (exOf(i) && exOf(i).name) || '';
+  const musOf  = i => ({ p: i.primary || (exOf(i) && exOf(i).primary) || '',
+                         s: i.secondary || (exOf(i) && exOf(i).secondary) || [] });
+  const subLine = m => `<b>${m.p}</b>` + (m.s.length ? ` · ${m.s.join(', ')}` : '');
+
+  // ---- view navigation ----
+  const views = document.querySelectorAll('.view'), navs = document.querySelectorAll('[data-view]');
   function go(v){
-    views.forEach(s=>s.classList.toggle('active', s.dataset.screen===v));
-    navs.forEach(b=>b.classList.toggle('active', b.dataset.view===v));
-    const main=document.querySelector('main'); if(main) main.scrollTop=0;
+    views.forEach(s => s.classList.toggle('active', s.dataset.screen === v));
+    navs.forEach(b => b.classList.toggle('active', b.dataset.view === v));
+    const m = document.querySelector('main'); if(m) m.scrollTop = 0;
     window.scrollTo({top:0});
   }
-  navs.forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
+  navs.forEach(b => b.addEventListener('click', () => go(b.dataset.view)));
 
-  // day tabs within routine
-  const dtabs=document.querySelectorAll('.dtab'), days=document.querySelectorAll('.day');
-  dtabs.forEach(t=>t.addEventListener('click',()=>{
-    dtabs.forEach(x=>x.classList.remove('active'));
-    days.forEach(x=>x.classList.remove('active'));
-    t.classList.add('active');
-    document.getElementById(t.dataset.day).classList.add('active');
-  }));
+  // ---- demo modal ----
+  const modal=$('animmodal'), aimg=$('animimg'), aname=$('animname'), atgt=$('animtgt'),
+        asec=$('animsec'), agear=$('animgear'), ageartxt=$('animgeartxt'), gearbox=$('animgearbox');
+  function openDemo(item){
+    const ex = exOf(item); if(!ex) return;
+    const m = musOf(item);
+    aimg.src = ex.gif;
+    aname.textContent = nameOf(item).replace('★','').trim();
+    atgt.textContent = m.p; asec.textContent = m.s.join(', ');
+    const g = item.gear && equipment[item.gear];
+    if(g){ agear.src = g.photo; ageartxt.textContent = item.equip || g.name; gearbox.style.display=''; }
+    else { gearbox.style.display='none'; }
+    modal.classList.add('open');
+  }
+  const closeDemo = () => { modal.classList.remove('open'); aimg.src=''; };
+  modal.addEventListener('click', closeDemo);
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeDemo(); });
 
-  // exercise demo preview (muscle highlight art © Gym Visual)
-  const MUS={
-    "bench-press":{t:"Pectorals",s:"Triceps, Shoulders"},
-    "incline-db-press":{t:"Pectorals",s:"Shoulders, Triceps"},
-    "cable-flye":{t:"Pectorals",s:"Deltoids, Triceps"},
-    "overhead-press":{t:"Delts",s:"Triceps, Upper Back"},
-    "lateral-raise":{t:"Delts",s:"Traps, Triceps"},
-    "triceps-pushdown":{t:"Triceps",s:"Forearms"},
-    "overhead-triceps":{t:"Triceps",s:"Shoulders"},
-    "barbell-row":{t:"Upper Back",s:"Biceps, Forearms"},
-    "lat-pulldown":{t:"Lats",s:"Biceps, Forearms"},
-    "seated-row":{t:"Upper Back",s:"Biceps, Forearms"},
-    "face-pull":{t:"Delts",s:"Trapezius, Rhomboids, Biceps"},
-    "incline-curl":{t:"Biceps",s:"Forearms"},
-    "hammer-curl":{t:"Biceps",s:"Forearms"},
-    "squat":{t:"Glutes",s:"Quadriceps, Hamstrings, Calves, Core"},
-    "leg-press":{t:"Quads",s:"Hamstrings, Glutes"},
-    "leg-extension":{t:"Quads",s:"Hamstrings"},
-    "leg-curl":{t:"Hamstrings",s:"Calves"},
-    "calf-raise":{t:"Calves",s:"Hamstrings, Glutes"},
-    "rdl":{t:"Glutes",s:"Hamstrings, Lower Back"},
-  };
-  const modal=document.getElementById('animmodal'), aimg=document.getElementById('animimg'),
-        aname=document.getElementById('animname'), atgt=document.getElementById('animtgt'), asec=document.getElementById('animsec'),
-        agear=document.getElementById('animgear'), ageartxt=document.getElementById('animgeartxt'), gearbox=document.getElementById('animgearbox');
-  const GEAR=[["freedom rack","IMG_7605"],["high pull","IMG_7603"],["low pull","IMG_7603"],["oh press","IMG_7589"],["leg press","IMG_7588"],["fuel","IMG_7586"],["nautilus","IMG_7583"],["gym rax","IMG_7604"],["dumbbell","IMG_7604"],["technogym","IMG_7592"]];
-  const pickGear=t=>{t=t.toLowerCase();for(const[k,p]of GEAR)if(t.includes(k))return p;return null;};
-  document.querySelectorAll('tr[data-anim]').forEach(r=>{
-    r.addEventListener('click',()=>{
-      const k=r.dataset.anim, m=MUS[k]||{t:'',s:''};
-      aimg.src='anim/'+k+'.gif';
-      aname.textContent=r.querySelector('td.ex .exn').textContent.replace('★','').replace(/▶$/,'').trim();
-      atgt.textContent=m.t; asec.textContent=m.s;
-      const mac=r.querySelector('td.mac').textContent.trim(), gp=pickGear(mac);
-      if(gp){agear.src='thumbs/'+gp+'.jpg';ageartxt.textContent=mac;gearbox.style.display='';}
-      else{gearbox.style.display='none';}
-      modal.classList.add('open');
+  // ---- render: routine ----
+  function exRow(item){
+    const ex = exOf(item), m = musOf(item);
+    const star = item.star ? '<span class="star">★</span> ' : '';
+    const tr = el('tr', null,
+      `<td class="ex"><span class="exn">${star}${nameOf(item)}</span><span class="submus">${subLine(m)}</span></td>`+
+      `<td class="mac">${item.equip}</td><td class="sets">${item.sets}</td>`);
+    if(ex){ tr.dataset.anim = item.ex; tr.addEventListener('click', () => openDemo(item)); }
+    return tr;
+  }
+  function selectDay(id){
+    document.querySelectorAll('.dtab').forEach(t => t.classList.toggle('active', t.dataset.day===id));
+    document.querySelectorAll('.day').forEach(d => d.classList.toggle('active', d.id===id));
+  }
+  (function renderRoutine(){
+    const tabs=$('daytabs'), wrap=$('days');
+    days.forEach((day,i)=>{
+      const tab = el('div', 'dtab'+(i?'':' active'), `<span>${day.name}</span><small>${day.focus}</small>`);
+      tab.dataset.day = day.id; tab.addEventListener('click', () => selectDay(day.id)); tabs.appendChild(tab);
+
+      const dv = el('div', 'day'+(i?'':' active')); dv.id = day.id;
+      dv.appendChild(el('div','daymeta',`<span>~<b>${day.sets} sets</b></span><span>~<b>${day.time}</b></span>`));
+      const table = el('table', null, '<thead><tr><th>Exercise</th><th>Equipment</th><th>Sets × Reps</th></tr></thead>');
+      const tb = el('tbody');
+      day.items.forEach(it => tb.appendChild(exRow(it)));
+      table.appendChild(tb); dv.appendChild(table); wrap.appendChild(dv);
     });
-  });
-  const closeAnim=()=>{modal.classList.remove('open');aimg.src='';};
-  modal.addEventListener('click',closeAnim);
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAnim();});
+  })();
+
+  // ---- render: loads ----
+  (function renderLoads(){
+    const tb = $('loadsbody');
+    loads.forEach(group => {
+      tb.appendChild(el('tr','grouprow',`<td colspan="4">${group.title}</td>`));
+      group.rows.forEach(r => {
+        const star = r.star ? '<span class="star">★</span> ' : '';
+        const tr = el('tr', null,
+          `<td class="ex">${star}${r.name}</td><td class="mac">${r.trains}</td>`+
+          `<td class="sets">${r.start}</td><td class="sets">${r.target}</td>`);
+        if(r.ex){ tr.dataset.anim = r.ex; tr.addEventListener('click', () => openDemo({ex:r.ex, name:r.name})); }
+        tb.appendChild(tr);
+      });
+    });
+  })();
+
+  // ---- render: equipment gallery ----
+  (function renderEquipment(){
+    const wrap = $('gallery');
+    equipmentGroups.forEach(g => {
+      wrap.appendChild(el('div','blocktitle', g.title));
+      const gal = el('div','gallery');
+      g.ids.forEach(id => {
+        const e = equipment[id];
+        gal.appendChild(el('div','gcard',
+          `<img loading="lazy" src="${e.photo}" alt="${e.name}"><div class="body"><div class="nm">${e.name}</div><div class="br">${e.br}</div></div>`));
+      });
+      wrap.appendChild(gal);
+    });
+  })();
 </script>
 </body>
 </html>
