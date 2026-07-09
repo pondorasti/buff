@@ -333,7 +333,7 @@
     const m = document.querySelector('main'); if(m) m.scrollTop = 0;
     window.scrollTo({top:0});
   }
-  navs.forEach(b => b.addEventListener('click', () => go(b.dataset.view)));
+  navs.forEach(b => b.addEventListener('click', () => { location.hash = b.dataset.view; }));
 
   // ---- demo modal ----
   const modal=$('animmodal'), aimg=$('animimg'), aname=$('animname'), atgt=$('animtgt'),
@@ -371,7 +371,7 @@
     const tabs=$('daytabs'), wrap=$('days');
     days.forEach((day,i)=>{
       const tab = el('div', 'dtab'+(i?'':' active'), `<span>${day.name}</span><small>${day.focus}</small>`);
-      tab.dataset.day = day.id; tab.addEventListener('click', () => selectDay(day.id)); tabs.appendChild(tab);
+      tab.dataset.day = day.id; tab.addEventListener('click', () => { location.hash = 'routine/'+day.id; }); tabs.appendChild(tab);
 
       const dv = el('div', 'day'+(i?'':' active')); dv.id = day.id;
       dv.appendChild(el('div','daymeta',`<span>~<b>${day.sets} sets</b></span><span>~<b>${day.time}</b></span>`));
@@ -412,6 +412,21 @@
       wrap.appendChild(gal);
     });
   })();
+
+  // ---- hash router (URL nav survives refresh + back/forward) ----
+  const VIEWS = ['overview','routine','loads','equipment'];
+  let curView = '';
+  function applyRoute(){
+    const [v, day] = (location.hash || '').replace(/^#/, '').split('/');
+    const view = VIEWS.includes(v) ? v : 'overview';
+    if(view !== curView){ go(view); curView = view; }
+    if(view === 'routine'){
+      const valid = day && document.getElementById(day);
+      selectDay(valid ? day : (document.querySelector('.dtab.active')?.dataset.day || 'd1'));
+    }
+  }
+  window.addEventListener('hashchange', applyRoute);
+  applyRoute();
 </script>
 </body>
 </html>
