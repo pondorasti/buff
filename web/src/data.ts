@@ -136,7 +136,8 @@ export interface LoadRow {
   trains: string
   start: string
   target: string
-  ex?: ExerciseId
+  /** one or more exercises this target applies to */
+  ex?: ExerciseId | readonly ExerciseId[]
   star?: boolean
 }
 export interface LoadGroup { title: string; rows: LoadRow[] }
@@ -156,10 +157,13 @@ export const loads: LoadGroup[] = [
     { name: 'Leg Extension', trains: 'Quads',      start: '30 kg / 66 lb',  target: '55 kg / 120 lb',  ex: 'leg-extension' },
     { name: 'Leg Curl',      trains: 'Hamstrings', start: '25 kg / 55 lb',  target: '45 kg / 100 lb',  ex: 'leg-curl' },
     { name: 'Calf Raise',    trains: 'Calves',     start: '40 kg / 88 lb',  target: '80 kg / 175 lb',  ex: 'calf-raise' },
+    { name: 'Incline DB Press', trains: 'Upper chest · per DB', start: '8 kg / 18 lb', target: '10 kg / 22 lb (DB cap)', ex: 'incline-db-press' },
+    { name: 'Cable Flye',    trains: 'Chest',      start: '10 kg / 22 lb',  target: '18 kg / 40 lb',   ex: 'cable-flye' },
     { name: 'Cable Lateral', trains: 'Side delts · per arm', start: '5 kg / 11 lb', target: '9 kg / 20 lb', ex: 'lateral-raise', star: true },
     { name: 'Face Pull',     trains: 'Rear delts', start: '15 kg / 33 lb',  target: '27 kg / 60 lb',   ex: 'face-pull', star: true },
-    { name: 'Curl',          trains: 'Biceps · cable/DB', start: '10 kg / 22 lb', target: '16 kg / 35 lb' },
+    { name: 'Curl',          trains: 'Biceps · cable/DB', start: '10 kg / 22 lb', target: '16 kg / 35 lb', ex: ['incline-curl', 'hammer-curl'] },
     { name: 'Rope Pushdown', trains: 'Triceps',    start: '15 kg / 33 lb',  target: '30 kg / 66 lb',   ex: 'triceps-pushdown' },
+    { name: 'Overhead Triceps Ext.', trains: 'Triceps · long head', start: '10 kg / 22 lb', target: '20 kg / 44 lb', ex: 'overhead-triceps' },
   ]},
 ]
 
@@ -183,9 +187,13 @@ export const exerciseUsage = (id: ExerciseId) =>
 export const equipmentUsage = (id: EquipmentId) =>
   days.flatMap((day) => day.items.filter((i) => i.gear === id).map((item) => ({ day, item })))
 
+/** Ids a load row applies to (normalizes single vs multi). */
+export const loadRowExercises = (r: LoadRow): readonly ExerciseId[] =>
+  r.ex === undefined ? [] : Array.isArray(r.ex) ? r.ex : [r.ex as ExerciseId]
+
 /** Load targets attached to this exercise. */
 export const loadsForExercise = (id: ExerciseId): LoadRow[] =>
-  loads.flatMap((g) => g.rows.filter((r) => r.ex === id))
+  loads.flatMap((g) => g.rows.filter((r) => loadRowExercises(r).includes(id)))
 
 /* ---- Item display helpers ---- */
 export const itemName = (i: DayItem): string => i.name ?? (i.ex ? exercises[i.ex].name : '')

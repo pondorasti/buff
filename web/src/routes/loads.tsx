@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Fragment } from 'react'
-import { loads } from '~/data'
+import { loads, loadRowExercises } from '~/data'
 import { ScreenHeader, Pad } from '~/components/ScreenHeader'
 
 export const Route = createFileRoute('/loads')({
@@ -46,17 +46,19 @@ function Loads() {
                       {group.title}
                     </td>
                   </tr>
-                  {group.rows.map((r) => (
+                  {group.rows.map((r) => {
+                    const exId = loadRowExercises(r)[0]
+                    return (
                     <tr
                       key={r.name}
                       className={
                         'relative border-b border-line last:border-0 ' +
-                        (r.ex ? 'transition-colors duration-150 hover:bg-panel-2' : '')
+                        (exId ? 'transition-colors duration-150 hover:bg-panel-2' : '')
                       }
                     >
                       <td className="px-[15px] py-3 text-[13.5px] font-semibold text-txt">
-                        {r.ex ? (
-                          <Link to="/exercise/$id" params={{ id: r.ex }} className="after:absolute after:inset-0">
+                        {exId ? (
+                          <Link to="/exercise/$id" params={{ id: exId }} className="after:absolute after:inset-0">
                             {r.star ? <span className="text-accent">★ </span> : null}
                             {r.name}
                           </Link>
@@ -75,7 +77,8 @@ function Loads() {
                         {r.target}
                       </td>
                     </tr>
-                  ))}
+                    )
+                  })}
                 </Fragment>
               ))}
             </tbody>
