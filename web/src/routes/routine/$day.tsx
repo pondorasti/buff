@@ -21,7 +21,7 @@ function RoutineDay() {
         <p className="mb-[18px] max-w-[640px] text-[14.5px] text-muted">
           Stop each set <b className="text-txt">1–2 reps short of failure</b>. Control the lowering (~2–3 sec).{' '}
           <span className="text-accent">★</span> = weak-point priority (delts &amp; upper back = the “built” look,
-          fastest). <b className="text-txt">Tap any exercise ▶</b> for a demo page with the muscles worked.
+          fastest).
         </p>
 
         <div className="mb-4 flex gap-[7px] overflow-x-auto pb-1 [-webkit-overflow-scrolling:touch] [scrollbar-width:none]">
