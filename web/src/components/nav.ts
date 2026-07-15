@@ -1,4 +1,4 @@
-import type { ComponentType, SVGProps } from 'react'
+import type { ComponentType } from 'react'
 import { IconGrid, IconBarbell, IconGauge, IconBox } from './icons'
 
 export interface NavItem {
@@ -6,7 +6,7 @@ export interface NavItem {
   params?: Record<string, string>
   label: string
   mobile: string
-  icon: ComponentType<SVGProps<SVGSVGElement>>
+  icon: ComponentType<{ className?: string }>
   /** match pathname exactly (default: prefix match on `section` or `to`) */
   exact?: boolean
   /** pathname prefix that marks this item active */

@@ -20,7 +20,7 @@ export function Sidebar() {
               (active ? 'bg-panel-2 text-txt' : 'text-muted hover:bg-panel hover:text-txt')
             }
           >
-            <n.icon className={'h-[19px] w-[19px] flex-none ' + (active ? 'stroke-accent' : '')} />
+            <n.icon className={'h-[19px] w-[19px] flex-none ' + (active ? 'text-accent' : '')} />
             {n.label}
           </Link>
         )
