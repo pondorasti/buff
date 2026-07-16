@@ -10,7 +10,7 @@ export const Route = createFileRoute('/loads')({
 function Loads() {
   return (
     <>
-      <ScreenHeader title="Load targets" tag="anchored @ 70 kg / 154 lb" />
+      <ScreenHeader title="Load targets" tag="anchored @ 54 kg / 120 lb" />
       <Pad>
         <p className="mb-[18px] max-w-[640px] text-[14.5px] text-muted">
           These are <b className="text-txt">starting anchors for a lean beginner</b> — not rules. The real rule: pick a
@@ -86,11 +86,12 @@ function Loads() {
         </div>
 
         <div className="mt-4 rounded-card border border-warn-line bg-warn-tint px-4 py-3.5">
-          <b className="text-warn">How to scale to you</b>
+          <b className="text-warn">Calibrated to you</b>
           <p className="mt-[3px] text-[13px] text-muted">
-            Heavier or lighter than 70 kg? Scale roughly in proportion — e.g. at 60 kg / 132 lb start ~15% lighter. The
-            Olympic bar alone is <b className="text-txt">20 kg / 44 lb</b>, so barbell starts include the bar. Let the{' '}
-            <b className="text-txt">last-1–2-reps-hard</b> rule decide the actual load.
+            Anchored to your current <b className="text-txt">54 kg / 120 lb</b> (goal: 59 kg / 130 lb). The Olympic bar
+            alone is <b className="text-txt">20 kg / 44 lb</b>, so barbell starts include the bar. Let the{' '}
+            <b className="text-txt">last-1–2-reps-hard</b> rule decide the actual load — and as your bodyweight climbs,
+            these targets should climb with it.
           </p>
         </div>
         <div className="mt-[18px] rounded-xl border border-line bg-panel px-[15px] py-[13px] text-[12.5px] text-muted">
