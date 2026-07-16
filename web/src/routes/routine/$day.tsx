@@ -19,12 +19,6 @@ function RoutineDay() {
     <>
       <ScreenHeader title="Routine" tag="~60 min / session" />
       <Pad>
-        <p className="mb-[18px] max-w-[640px] text-[14.5px] text-muted">
-          Stop each set <b className="text-txt">1–2 reps short of failure</b>. Control the lowering (~2–3 sec).{' '}
-          <span className="text-accent">★</span> = weak-point priority (delts &amp; upper back = the “built” look,
-          fastest).
-        </p>
-
         <div className="mb-4">
           <WeekChips activeSlug={day.slug} showFocus />
         </div>
@@ -48,6 +42,17 @@ function RoutineDay() {
             on cables or the barbell.
           </p>
         </div>
+
+        <ul className="mt-[18px] max-w-[640px] list-disc space-y-1.5 pl-5 text-[13.5px] text-muted">
+          <li>
+            Stop each set <b className="text-txt">1–2 reps short of failure</b>.
+          </li>
+          <li>Control the lowering (~2–3 sec).</li>
+          <li>
+            <span className="text-accent">★</span> = weak-point priority (delts &amp; upper back = the “built” look,
+            fastest).
+          </li>
+        </ul>
       </Pad>
     </>
   )
