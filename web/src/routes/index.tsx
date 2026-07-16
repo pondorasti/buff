@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ScreenHeader, Pad, BlockTitle } from '~/components/ScreenHeader'
 import { IconArrow } from '~/components/icons'
+import { WeekChips } from '~/components/WeekChips'
 
 export const Route = createFileRoute('/')({
   component: Overview,
@@ -11,16 +12,6 @@ const LEVERS = [
   { kv: 'Protein', stat: '1.8–2.2', p: 'g/kg (≈ 0.8–1 g/lb).' },
   { kv: 'Sleep', stat: '7–9 h', p: 'Where growth happens.' },
   { kv: 'Creatine', stat: '5 g', p: 'per day, any time.' },
-]
-
-const WEEK: { d: string; day?: string; slug?: string }[] = [
-  { d: 'Mon', day: 'Push', slug: 'push' },
-  { d: 'Tue', day: 'Pull', slug: 'pull' },
-  { d: 'Wed', day: 'Legs', slug: 'legs' },
-  { d: 'Thu' },
-  { d: 'Fri', day: 'Upper', slug: 'upper' },
-  { d: 'Sat', day: 'Lower+', slug: 'lower-plus' },
-  { d: 'Sun' },
 ]
 
 function Overview() {
@@ -58,27 +49,7 @@ function Overview() {
         </div>
 
         <BlockTitle>Your week</BlockTitle>
-        <div className="flex flex-wrap gap-2">
-          {WEEK.map((w) =>
-            w.slug ? (
-              <Link
-                key={w.d}
-                to="/routine/$day"
-                params={{ day: w.slug }}
-                className="rounded-[10px] border border-line bg-panel px-[13px] py-[9px] text-[13px] text-muted hover:border-dim"
-              >
-                <b className="text-txt">{w.d}</b> <span className="font-bold text-accent">{w.day}</span>
-              </Link>
-            ) : (
-              <div
-                key={w.d}
-                className="rounded-[10px] border border-line bg-panel px-[13px] py-[9px] text-[13px] text-muted opacity-60"
-              >
-                <b className="text-txt">{w.d}</b> Rest
-              </div>
-            ),
-          )}
-        </div>
+        <WeekChips />
       </Pad>
     </>
   )

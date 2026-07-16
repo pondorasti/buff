@@ -1,7 +1,8 @@
-import { createFileRoute, Link, notFound } from '@tanstack/react-router'
-import { days, getDayBySlug } from '~/data'
+import { createFileRoute, notFound } from '@tanstack/react-router'
+import { getDayBySlug } from '~/data'
 import { ScreenHeader, Pad } from '~/components/ScreenHeader'
 import { ExerciseTable } from '~/components/ExerciseTable'
+import { WeekChips } from '~/components/WeekChips'
 
 export const Route = createFileRoute('/routine/$day')({
   loader: ({ params }) => {
@@ -24,28 +25,8 @@ function RoutineDay() {
           fastest).
         </p>
 
-        <div className="mb-4 flex gap-[7px] overflow-x-auto pb-1 [-webkit-overflow-scrolling:touch] [scrollbar-width:none]">
-          {days.map((d) => {
-            const active = d.slug === day.slug
-            return (
-              <Link
-                key={d.slug}
-                to="/routine/$day"
-                params={{ day: d.slug }}
-                className={
-                  'flex flex-none flex-col gap-px rounded-[11px] border px-3.5 py-[9px] text-[13.5px] font-semibold ' +
-                  (active
-                    ? 'border-accent bg-accent text-accent-fg'
-                    : 'border-line bg-panel text-muted hover:border-dim hover:text-txt')
-                }
-              >
-                <span>{d.name}</span>
-                <small className={'text-[10px] font-semibold tracking-[0.03em] ' + (active ? 'opacity-60' : 'text-dim')}>
-                  {d.focus}
-                </small>
-              </Link>
-            )
-          })}
+        <div className="mb-4">
+          <WeekChips activeSlug={day.slug} />
         </div>
 
         <div className="mx-0.5 mb-3 flex gap-3.5 text-[12.5px] text-muted">

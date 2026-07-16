@@ -168,7 +168,19 @@ export const loads: LoadGroup[] = [
   ]},
 ]
 
-export const db = { equipment, equipmentGroups, exercises, days, loads }
+/* ---- Weekly schedule (Overview chips + Routine day selector) ---- */
+export interface WeekEntry { d: string; slug?: string; name?: string }
+export const week: WeekEntry[] = [
+  { d: 'Mon', slug: 'push', name: 'Push' },
+  { d: 'Tue', slug: 'pull', name: 'Pull' },
+  { d: 'Wed', slug: 'legs', name: 'Legs' },
+  { d: 'Thu' },
+  { d: 'Fri', slug: 'upper', name: 'Upper' },
+  { d: 'Sat', slug: 'lower-plus', name: 'Lower+' },
+  { d: 'Sun' },
+]
+
+export const db = { equipment, equipmentGroups, exercises, days, loads, week }
 
 /* ---- Derived relations ---- */
 export const getDayBySlug = (slug: string): Day | undefined =>
