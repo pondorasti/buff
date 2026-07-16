@@ -21,7 +21,7 @@ export const equipment = {
   'stairs':       { name: 'Stair climbers ×2', br: 'StairMaster Gauntlet', photo: '/thumbs/IMG_7596.jpg' },
   'rowers':       { name: 'Rowers ×2', br: 'Rail + fan rower', photo: '/thumbs/IMG_7595.jpg' },
   'fuel-bench':   { name: 'Adjustable bench', br: 'Flat / incline', photo: '/thumbs/IMG_7586.jpg' },
-  'gymrax':       { name: 'Functional rig + free weights', br: 'Hex DBs (~10 kg / 22 lb), spin-lock DBs, kettlebell, wall/med balls (8 lb / 3.6 kg), 55 cm ball, rings, foam rollers, step, bands', photo: '/thumbs/IMG_7604.jpg' },
+  'gymrax':       { name: 'Functional rig + free weights', br: 'Hex DBs (up to 25 lb / ~11 kg), spin-lock DBs, kettlebell, wall/med balls (8 lb / 3.6 kg), 55 cm ball, rings, foam rollers, step, bands', photo: '/thumbs/IMG_7604.jpg' },
 } as const
 
 export type EquipmentId = keyof typeof equipment
@@ -157,7 +157,7 @@ export const loads: LoadGroup[] = [
     { name: 'Leg Extension', trains: 'Quads',      start: '30 kg / 66 lb',  target: '55 kg / 120 lb',  ex: 'leg-extension' },
     { name: 'Leg Curl',      trains: 'Hamstrings', start: '25 kg / 55 lb',  target: '45 kg / 100 lb',  ex: 'leg-curl' },
     { name: 'Calf Raise',    trains: 'Calves',     start: '40 kg / 88 lb',  target: '80 kg / 175 lb',  ex: 'calf-raise' },
-    { name: 'Incline DB Press', trains: 'Upper chest · per DB', start: '8 kg / 18 lb', target: '10 kg / 22 lb (DB cap)', ex: 'incline-db-press' },
+    { name: 'Incline DB Press', trains: 'Upper chest · per DB', start: '8 kg / 18 lb', target: '11 kg / 25 lb (DB cap)', ex: 'incline-db-press' },
     { name: 'Cable Flye',    trains: 'Chest',      start: '10 kg / 22 lb',  target: '18 kg / 40 lb',   ex: 'cable-flye' },
     { name: 'Cable Lateral', trains: 'Side delts · per arm', start: '5 kg / 11 lb', target: '9 kg / 20 lb', ex: 'lateral-raise', star: true },
     { name: 'Face Pull',     trains: 'Rear delts', start: '15 kg / 33 lb',  target: '27 kg / 60 lb',   ex: 'face-pull', star: true },
