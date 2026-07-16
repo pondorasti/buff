@@ -17,9 +17,10 @@ export const equipment = {
   'nautilus-ft':  { name: 'Dual functional trainers', br: 'Nautilus Instinct · pair', photo: '/thumbs/IMG_7583.jpg' },
   'total-gym':    { name: 'Bodyweight glideboard', br: 'Incline rail trainer', photo: '/thumbs/IMG_7587.jpg' },
   'back-ext':     { name: 'Back-extension bench', br: '45° frame', photo: '/thumbs/IMG_7585.jpg' },
-  'treadmills':   { name: 'Treadmills ×2', br: 'Star Trac', photo: '/thumbs/IMG_7594.jpg' },
-  'stairs':       { name: 'Stair climbers ×2', br: 'StairMaster Gauntlet', photo: '/thumbs/IMG_7596.jpg' },
-  'rowers':       { name: 'Rowers ×2', br: 'Rail + fan rower', photo: '/thumbs/IMG_7595.jpg' },
+  'treadmill':    { name: 'Treadmill', br: 'Star Trac', photo: '/thumbs/IMG_7594.jpg' },
+  'stair-climber': { name: 'Stair climber', br: 'StairMaster Gauntlet', photo: '/thumbs/IMG_7596.jpg' },
+  'rower':        { name: 'Rower', br: 'Rail / magnetic resistance', photo: '/thumbs/IMG_7595.jpg' },
+  'fan-rower':    { name: 'Fan rower', br: 'Air resistance (Assault-style)', photo: '/thumbs/IMG_7595.jpg' },
   'fuel-bench':   { name: 'Adjustable bench', br: 'Flat / incline', photo: '/thumbs/IMG_7586.jpg' },
   'gymrax':       { name: 'Functional rig + free weights', br: 'Hex DBs (up to 25 lb / ~11 kg), spin-lock DBs, kettlebell, wall/med balls (8 lb / 3.6 kg), 55 cm ball, rings, foam rollers, step, bands', photo: '/thumbs/IMG_7604.jpg' },
 } as const
@@ -31,7 +32,7 @@ export interface Equipment { name: string; br: string; photo: string }
 export const equipmentGroups: { title: string; ids: EquipmentId[] }[] = [
   { title: 'Strength — Rack & selectorized machines', ids: ['freedom-rack', 'tg-press', 'tg-legpress', 'tg-legext', 'tg-pulls'] },
   { title: 'Functional / cable & bodyweight', ids: ['nautilus-ft', 'total-gym', 'back-ext'] },
-  { title: 'Cardio', ids: ['treadmills', 'stairs', 'rowers'] },
+  { title: 'Cardio', ids: ['treadmill', 'stair-climber', 'rower', 'fan-rower'] },
   { title: 'Free weights & accessories', ids: ['fuel-bench', 'gymrax'] },
 ]
 
