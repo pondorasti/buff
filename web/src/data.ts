@@ -21,7 +21,7 @@ export const equipment = {
   'stair-climber': { name: 'Stair climber', br: 'StairMaster Gauntlet', photo: '/thumbs/IMG_7596.jpg' },
   'rower':        { name: 'Rower', br: 'Rail / magnetic resistance', photo: '/thumbs/IMG_7595.jpg' },
   'fan-rower':    { name: 'Fan rower', br: 'Air resistance (Assault-style)', photo: '/thumbs/IMG_7595.jpg' },
-  'fuel-bench':   { name: 'Adjustable bench', br: 'Flat / incline', photo: '/thumbs/IMG_7586.jpg' },
+  'dip-tower':    { name: 'Dip / knee-raise tower', br: 'FUEL · captain’s chair — dips, vertical knee raises', photo: '/thumbs/IMG_7586.jpg' },
   'gymrax':       { name: 'Functional rig + free weights', br: 'Hex DBs (up to 25 lb / ~11 kg), spin-lock DBs, kettlebell, wall/med balls (8 lb / 3.6 kg), 55 cm ball, rings, foam rollers, step, bands', photo: '/thumbs/IMG_7604.jpg' },
 } as const
 
@@ -31,9 +31,9 @@ export interface Equipment { name: string; br: string; photo: string }
 /* Ordering + grouping for the Equipment gallery */
 export const equipmentGroups: { title: string; ids: EquipmentId[] }[] = [
   { title: 'Strength — Rack & selectorized machines', ids: ['freedom-rack', 'tg-press', 'tg-legpress', 'tg-legext', 'tg-pulls'] },
-  { title: 'Functional / cable & bodyweight', ids: ['nautilus-ft', 'total-gym', 'back-ext'] },
+  { title: 'Functional / cable & bodyweight', ids: ['nautilus-ft', 'total-gym', 'back-ext', 'dip-tower'] },
   { title: 'Cardio', ids: ['treadmill', 'stair-climber', 'rower', 'fan-rower'] },
-  { title: 'Free weights & accessories', ids: ['fuel-bench', 'gymrax'] },
+  { title: 'Free weights & accessories', ids: ['gymrax'] },
 ]
 
 /* ---- Exercises (canonical: name, muscles, demo gif) ---- */
@@ -89,7 +89,7 @@ export interface Day {
 export const days: Day[] = [
   { id: 'd1', slug: 'push', name: 'Push', focus: 'CHEST·SHLDR·TRI', sets: 22, time: '55–65 min', items: [
     { ex: 'bench-press',      equip: 'Freedom Rack',               gear: 'freedom-rack', sets: '4 × 5–8' },
-    { ex: 'incline-db-press', equip: 'FUEL bench + dumbbells',     gear: 'fuel-bench',   sets: '3 × 8–12' },
+    { ex: 'incline-db-press', equip: 'Rack bench (incline) + dumbbells', gear: 'freedom-rack', sets: '3 × 8–12' },
     { ex: 'cable-flye',       equip: 'Nautilus functional trainer', gear: 'nautilus-ft', sets: '3 × 12–15' },
     { ex: 'overhead-press',   equip: 'Technogym OH Press',         gear: 'tg-press',     sets: '3 × 8–12' },
     { ex: 'lateral-raise',    equip: 'Nautilus, single-arm',       gear: 'nautilus-ft',  sets: '4 × 12–20', star: true },
@@ -101,7 +101,7 @@ export const days: Day[] = [
     { ex: 'lat-pulldown', equip: 'Technogym High Pull',    gear: 'tg-pulls',     sets: '4 × 8–12' },
     { ex: 'seated-row',   equip: 'Technogym Low Pull',     gear: 'tg-pulls',     sets: '3 × 8–12' },
     { ex: 'face-pull',    equip: 'Nautilus cable (rope)',  gear: 'nautilus-ft',  sets: '3 × 15–20', star: true },
-    { ex: 'incline-curl', equip: 'FUEL bench + dumbbells', gear: 'fuel-bench',   sets: '3 × 10–12' },
+    { ex: 'incline-curl', equip: 'Rack bench (incline) + dumbbells', gear: 'freedom-rack', sets: '3 × 10–12' },
     { ex: 'hammer-curl',  equip: 'Dumbbells or cable',     gear: 'gymrax',       sets: '3 × 10–12' },
   ]},
   { id: 'd3', slug: 'legs', name: 'Legs', focus: 'QUAD·HAM·CALF', sets: 17, time: '50–60 min', items: [
@@ -114,7 +114,7 @@ export const days: Day[] = [
   { id: 'd4', slug: 'upper', name: 'Upper', focus: 'DELT/ARM', sets: 23, time: '55–60 min', items: [
     { ex: 'overhead-press', name: 'Barbell Overhead Press', equip: 'Freedom Rack',        gear: 'freedom-rack', sets: '4 × 6–10' },
     { ex: 'lat-pulldown',   name: 'Wide Lat Pulldown',      equip: 'Technogym High Pull', gear: 'tg-pulls',     sets: '3 × 10–12' },
-    { name: 'Incline Chest Press', primary: 'Upper chest', secondary: ['Shoulders'], equip: 'Machine or FUEL bench', gear: 'fuel-bench', sets: '3 × 8–12' },
+    { name: 'Incline Chest Press', primary: 'Upper chest', secondary: ['Shoulders'], equip: 'Machine or rack bench', gear: 'freedom-rack', sets: '3 × 8–12' },
     { ex: 'lateral-raise',  equip: 'Nautilus cable',        gear: 'nautilus-ft', sets: '4 × 15–20', star: true },
     { ex: 'seated-row',     name: 'Cable Row',              equip: 'Technogym Low Pull', gear: 'tg-pulls', sets: '3 × 10–12' },
     { ex: 'incline-curl',   name: 'Superset: Curl + Pushdown', secondary: ['Triceps'], equip: 'Nautilus cable', gear: 'nautilus-ft', sets: '3 × 12 ea' },
