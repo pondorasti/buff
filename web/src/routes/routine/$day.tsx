@@ -26,7 +26,7 @@ function RoutineDay() {
         </p>
 
         <div className="mb-4">
-          <WeekChips activeSlug={day.slug} />
+          <WeekChips activeSlug={day.slug} showFocus />
         </div>
 
         <div className="mx-0.5 mb-3 flex gap-3.5 text-[12.5px] text-muted">
