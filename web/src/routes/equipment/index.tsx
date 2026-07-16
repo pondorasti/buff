@@ -37,7 +37,6 @@ function EquipmentGallery() {
                     />
                     <div className="px-3 pt-[11px] pb-3">
                       <div className="text-[13.5px] font-bold leading-[1.25] tracking-[-0.01em]">{e.name}</div>
-                      <div className="mt-0.5 text-xs text-muted">{e.br}</div>
                     </div>
                   </Link>
                 )
