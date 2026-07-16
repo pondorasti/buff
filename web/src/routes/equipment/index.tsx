@@ -10,12 +10,8 @@ export const Route = createFileRoute('/equipment/')({
 function EquipmentGallery() {
   return (
     <>
-      <ScreenHeader title="Equipment" tag="from 18 photos" />
+      <ScreenHeader title="Equipment" />
       <Pad>
-        <p className="mb-[18px] max-w-[640px] text-[14.5px] text-muted">
-          A Technogym-heavy setup with solid machine coverage, a barbell rack, plus a free-weight / functional corner.
-          Photos are your own.
-        </p>
         {equipmentGroups.map((g) => (
           <Fragment key={g.title}>
             <BlockTitle>{g.title}</BlockTitle>
