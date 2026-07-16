@@ -27,7 +27,7 @@ function EquipmentGallery() {
                     key={id}
                     to="/equipment/$id"
                     params={{ id }}
-                    className="flex flex-col overflow-hidden rounded-[14px] border border-line bg-panel transition-colors duration-150 hover:border-dim"
+                    className="flex flex-col overflow-hidden rounded-[14px] border border-line bg-panel hover:border-dim"
                   >
                     <img
                       loading="lazy"

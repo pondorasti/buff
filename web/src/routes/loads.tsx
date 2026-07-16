@@ -53,7 +53,7 @@ function Loads() {
                       key={r.name}
                       className={
                         'relative border-b border-line last:border-0 ' +
-                        (exId ? 'transition-colors duration-150 hover:bg-panel-2' : '')
+                        (exId ? 'hover:bg-panel-2' : '')
                       }
                     >
                       <td className="px-[15px] py-3 text-[13.5px] font-semibold text-txt">

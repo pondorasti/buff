@@ -33,7 +33,7 @@ function RoutineDay() {
                 to="/routine/$day"
                 params={{ day: d.slug }}
                 className={
-                  'flex flex-none flex-col gap-px rounded-[11px] border px-3.5 py-[9px] text-[13.5px] font-semibold transition-colors duration-150 ' +
+                  'flex flex-none flex-col gap-px rounded-[11px] border px-3.5 py-[9px] text-[13.5px] font-semibold ' +
                   (active
                     ? 'border-accent bg-accent text-accent-fg'
                     : 'border-line bg-panel text-muted hover:border-dim hover:text-txt')

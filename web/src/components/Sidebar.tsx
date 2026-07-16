@@ -16,7 +16,7 @@ export function Sidebar() {
             to={n.to}
             params={n.params as never}
             className={
-              'flex w-full items-center gap-3 rounded-[11px] px-3 py-2.5 text-left text-[14.5px] font-semibold transition-colors duration-150 ' +
+              'flex w-full items-center gap-3 rounded-[11px] px-3 py-2.5 text-left text-[14.5px] font-semibold ' +
               (active ? 'bg-panel-2 text-txt' : 'text-muted hover:bg-panel hover:text-txt')
             }
           >

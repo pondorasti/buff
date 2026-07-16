@@ -62,7 +62,7 @@ function ExercisePage() {
                 </thead>
                 <tbody>
                   {usage.map(({ day, item }, i) => (
-                    <tr key={i} className="relative border-b border-line transition-colors duration-150 last:border-0 hover:bg-panel-2">
+                    <tr key={i} className="relative border-b border-line last:border-0 hover:bg-panel-2">
                       <td className="px-[15px] py-3 text-[13.5px] font-semibold text-txt">
                         <Link to="/routine/$day" params={{ day: day.slug }} className="after:absolute after:inset-0">
                           {day.name}
@@ -112,7 +112,7 @@ function ExercisePage() {
                     key={gid}
                     to="/equipment/$id"
                     params={{ id: gid }}
-                    className="flex items-center gap-3 rounded-card border border-line bg-panel p-2.5 transition-colors duration-150 hover:border-dim"
+                    className="flex items-center gap-3 rounded-card border border-line bg-panel p-2.5 hover:border-dim"
                   >
                     <img src={g.photo} alt={g.name} className="h-[58px] w-[58px] flex-none rounded-[10px] bg-panel-2 object-cover" />
                     <div className="text-xs text-muted">

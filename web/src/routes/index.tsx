@@ -65,7 +65,7 @@ function Overview() {
                 key={w.d}
                 to="/routine/$day"
                 params={{ day: w.slug }}
-                className="rounded-[10px] border border-line bg-panel px-[13px] py-[9px] text-[13px] text-muted transition-colors duration-150 hover:border-dim"
+                className="rounded-[10px] border border-line bg-panel px-[13px] py-[9px] text-[13px] text-muted hover:border-dim"
               >
                 <b className="text-txt">{w.d}</b> <span className="font-bold text-accent">{w.day}</span>
               </Link>

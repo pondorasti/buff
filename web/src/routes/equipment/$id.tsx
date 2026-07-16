@@ -40,7 +40,7 @@ function EquipmentPage() {
                     </thead>
                     <tbody>
                       {usage.map(({ day, item }, i) => (
-                        <tr key={i} className="relative border-b border-line transition-colors duration-150 last:border-0 hover:bg-panel-2">
+                        <tr key={i} className="relative border-b border-line last:border-0 hover:bg-panel-2">
                           <td className="px-[15px] py-3 text-[13.5px] font-semibold text-txt">
                             {item.ex ? (
                               <Link to="/exercise/$id" params={{ id: item.ex }} className="after:absolute after:inset-0">

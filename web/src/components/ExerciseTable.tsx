@@ -61,7 +61,7 @@ function Row({ item }: { item: DayItem }) {
     <tr
       className={
         'relative border-b border-line last:border-0 ' +
-        (linked ? 'transition-colors duration-150 hover:bg-panel-2' : '')
+        (linked ? 'hover:bg-panel-2' : '')
       }
     >
       <td className="px-[15px] py-3">
