@@ -40,7 +40,6 @@ export const equipmentGroups: { title: string; ids: EquipmentId[] }[] = [
 export const exercises = {
   'bench-press':      { name: 'Barbell Bench Press', primary: 'Chest', secondary: ['Triceps', 'Shoulders'], gif: '/anim/bench-press.gif' },
   'incline-db-press': { name: 'Incline DB Press', primary: 'Upper chest', secondary: ['Shoulders'], gif: '/anim/incline-db-press.gif' },
-  'cable-flye':       { name: 'Cable Flye', primary: 'Chest', secondary: ['Front delts'], gif: '/anim/cable-flye.gif' },
   'overhead-press':   { name: 'Barbell Overhead Press', primary: 'Delts', secondary: ['Triceps'], gif: '/anim/overhead-press.gif' },
   'machine-overhead-press': { name: 'Overhead Press', primary: 'Delts', secondary: ['Triceps'], gif: '/anim/machine-overhead-press.gif' },
   'lateral-raise':    { name: 'Cable Lateral Raise', primary: 'Side delts', secondary: [], gif: '/anim/lateral-raise.gif' },
@@ -89,10 +88,9 @@ export interface Day {
 }
 
 export const days: Day[] = [
-  { id: 'd1', slug: 'push', name: 'Push', focus: 'CHEST·SHLDR·TRI', sets: 22, time: '55–65 min', items: [
+  { id: 'd1', slug: 'push', name: 'Push', focus: 'CHEST·SHLDR·TRI', sets: 19, time: '45–55 min', items: [
     { ex: 'bench-press',      gear: 'freedom-rack', sets: '4 × 5–8' },
     { ex: 'incline-db-press', gear: 'freedom-rack', hint: 'incline bench + DBs', sets: '3 × 8–12' },
-    { ex: 'cable-flye',       gear: 'nautilus-ft',  sets: '3 × 12–15' },
     { ex: 'machine-overhead-press', gear: 'tg-press', sets: '3 × 8–12' },
     { ex: 'lateral-raise',    gear: 'nautilus-ft',  hint: 'single-arm', sets: '4 × 12–20', star: true },
     { ex: 'triceps-pushdown', gear: 'nautilus-ft',  hint: 'rope', sets: '3 × 10–15' },
@@ -162,7 +160,6 @@ export const loads: LoadGroup[] = [
     { name: 'Leg Curl',      trains: 'Hamstrings', start: '20 kg / 44 lb',  target: '35 kg / 77 lb',   ex: 'leg-curl' },
     { name: 'Calf Raise',    trains: 'Calves',     start: '30 kg / 66 lb',  target: '60 kg / 132 lb',  ex: 'calf-raise' },
     { name: 'Incline DB Press', trains: 'Upper chest · per DB', start: '7 kg / 15 lb', target: '14 kg / 30 lb', ex: 'incline-db-press' },
-    { name: 'Cable Flye',    trains: 'Chest',      start: '8 kg / 18 lb',   target: '14 kg / 31 lb',   ex: 'cable-flye' },
     { name: 'Cable Lateral', trains: 'Side delts · per arm', start: '4 kg / 9 lb', target: '7 kg / 15 lb', ex: 'lateral-raise', star: true },
     { name: 'Face Pull',     trains: 'Rear delts', start: '12 kg / 26 lb',  target: '20 kg / 44 lb',   ex: 'face-pull', star: true },
     { name: 'Curl',          trains: 'Biceps · cable/DB', start: '8 kg / 18 lb', target: '12 kg / 26 lb', ex: ['incline-curl', 'hammer-curl'] },
