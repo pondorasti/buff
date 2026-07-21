@@ -42,7 +42,7 @@ export const exercises = {
   'incline-db-press': { name: 'Incline DB Press', primary: 'Upper chest', secondary: ['Shoulders'], gif: '/anim/incline-db-press.gif' },
   'cable-flye':       { name: 'Cable Flye', primary: 'Chest', secondary: ['Front delts'], gif: '/anim/cable-flye.gif' },
   'overhead-press':   { name: 'Barbell Overhead Press', primary: 'Delts', secondary: ['Triceps'], gif: '/anim/overhead-press.gif' },
-  'machine-overhead-press': { name: 'Overhead Press (machine)', primary: 'Delts', secondary: ['Triceps'], gif: '/anim/overhead-press.gif' },
+  'machine-overhead-press': { name: 'Overhead Press (machine)', primary: 'Delts', secondary: ['Triceps'], gif: '/anim/machine-overhead-press.gif' },
   'lateral-raise':    { name: 'Cable Lateral Raise', primary: 'Side delts', secondary: [], gif: '/anim/lateral-raise.gif' },
   'triceps-pushdown': { name: 'Rope Triceps Pushdown', primary: 'Triceps', secondary: [], gif: '/anim/triceps-pushdown.gif' },
   'overhead-triceps': { name: 'Overhead Cable Triceps Ext.', primary: 'Triceps', secondary: ['long head'], gif: '/anim/overhead-triceps.gif' },
