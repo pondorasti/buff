@@ -6,7 +6,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "typecheck": "tsc --noEmit",
-    "deploy": "vite build && cp -R .hunk dist/client/.hunk && hunk push dist/client"
+    "deploy": "(vite build || vite build || vite build) && cp -R .hunk dist/client/.hunk && hunk push dist/client"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.3.2",
