@@ -42,7 +42,7 @@ export const exercises = {
   'incline-db-press': { name: 'Incline DB Press', primary: 'Upper chest', secondary: ['Shoulders'], gif: '/anim/incline-db-press.gif' },
   'cable-flye':       { name: 'Cable Flye', primary: 'Chest', secondary: ['Front delts'], gif: '/anim/cable-flye.gif' },
   'overhead-press':   { name: 'Barbell Overhead Press', primary: 'Delts', secondary: ['Triceps'], gif: '/anim/overhead-press.gif' },
-  'machine-overhead-press': { name: 'Overhead Press (machine)', primary: 'Delts', secondary: ['Triceps'], gif: '/anim/machine-overhead-press.gif' },
+  'machine-overhead-press': { name: 'Overhead Press', primary: 'Delts', secondary: ['Triceps'], gif: '/anim/machine-overhead-press.gif' },
   'lateral-raise':    { name: 'Cable Lateral Raise', primary: 'Side delts', secondary: [], gif: '/anim/lateral-raise.gif' },
   'triceps-pushdown': { name: 'Rope Triceps Pushdown', primary: 'Triceps', secondary: [], gif: '/anim/triceps-pushdown.gif' },
   'overhead-triceps': { name: 'Overhead Cable Triceps Ext.', primary: 'Triceps', secondary: ['long head'], gif: '/anim/overhead-triceps.gif' },
@@ -154,7 +154,7 @@ export const loads: LoadGroup[] = [
     { name: 'Romanian Deadlift', trains: 'Hams / glutes',  start: '30 kg / 66 lb', target: '60 kg / 132 lb', ex: 'rdl' },
   ]},
   { title: 'Machine & cable accessories', rows: [
-    { name: 'Overhead Press (machine)', trains: 'Shoulders', start: '15 kg / 33 lb', target: '30 kg / 66 lb', ex: 'machine-overhead-press' },
+    { name: 'Overhead Press', trains: 'Shoulders', start: '15 kg / 33 lb', target: '30 kg / 66 lb', ex: 'machine-overhead-press' },
     { name: 'Lat Pulldown',  trains: 'Back',       start: '25 kg / 55 lb',  target: '45 kg / 100 lb',  ex: 'lat-pulldown' },
     { name: 'Seated Row',    trains: 'Back',       start: '25 kg / 55 lb',  target: '45 kg / 100 lb',  ex: 'seated-row' },
     { name: 'Leg Press',     trains: 'Quads',      start: '55 kg / 120 lb', target: '110 kg / 240 lb', ex: 'leg-press' },
