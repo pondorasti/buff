@@ -34,12 +34,6 @@ function RoutineDay() {
 
         <ExerciseTable items={day.items} />
 
-        <div className="mt-4 rounded-card border border-warn-line bg-warn-tint px-4 py-3.5">
-          <b className="text-warn">Freedom Rack = your new anchor</b>
-          <p className="mt-[3px] text-[13px] text-muted">
-            Each day opens with a barbell compound on the Freedom Rack — the best single driver for size and strength.
-          </p>
-        </div>
 
         <ul className="mt-[18px] max-w-[640px] list-disc space-y-1.5 pl-5 text-[13.5px] text-muted">
           <li>
