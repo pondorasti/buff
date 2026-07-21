@@ -9,20 +9,20 @@
 
 /* ---- Equipment (physical machines; drives gallery + detail pages) ---- */
 export const equipment = {
-  'freedom-rack': { name: 'Barbell rack + bench', br: 'Nautilus · Smith/half-rack, Olympic bar + plates, bench', photo: '/thumbs/IMG_7605.jpg' },
-  'tg-press':     { name: 'Chest Press / Overhead Press', br: 'Technogym · dual', photo: '/thumbs/IMG_7589.jpg' },
-  'tg-legpress':  { name: 'Leg Press / Calf', br: 'Technogym · dual', photo: '/thumbs/IMG_7588.jpg' },
-  'tg-legext':    { name: 'Leg Extension / Leg Curl', br: 'Technogym · dual', photo: '/thumbs/IMG_7592.jpg' },
-  'tg-pulls':     { name: 'High Pull / Low Pull', br: 'Technogym · pulldown + row', photo: '/thumbs/IMG_7603.jpg' },
-  'nautilus-ft':  { name: 'Dual functional trainers', br: 'Nautilus Instinct · pair', photo: '/thumbs/IMG_7583.jpg' },
-  'total-gym':    { name: 'Bodyweight glideboard', br: 'Incline rail trainer', photo: '/thumbs/IMG_7587.jpg' },
-  'back-ext':     { name: 'Back-extension bench', br: '45° frame', photo: '/thumbs/IMG_7585.jpg' },
+  'freedom-rack': { name: 'Freedom Rack', br: 'Nautilus · Smith/half-rack, Olympic bar + plates, adjustable bench', photo: '/thumbs/IMG_7605.jpg' },
+  'tg-press':     { name: 'Chest / Overhead Press', br: 'Technogym · dual-function machine', photo: '/thumbs/IMG_7589.jpg' },
+  'tg-legpress':  { name: 'Leg Press / Calf', br: 'Technogym · dual-function machine', photo: '/thumbs/IMG_7588.jpg' },
+  'tg-legext':    { name: 'Leg Extension / Curl', br: 'Technogym · dual-function machine', photo: '/thumbs/IMG_7592.jpg' },
+  'tg-pulls':     { name: 'High / Low Pull', br: 'Technogym · pulldown + seated row', photo: '/thumbs/IMG_7603.jpg' },
+  'nautilus-ft':  { name: 'Functional Trainer', br: 'Nautilus Instinct · dual cable towers', photo: '/thumbs/IMG_7583.jpg' },
+  'total-gym':    { name: 'Glideboard', br: 'Incline rail bodyweight trainer', photo: '/thumbs/IMG_7587.jpg' },
+  'back-ext':     { name: 'Back-extension Bench', br: '45° frame', photo: '/thumbs/IMG_7585.jpg' },
   'treadmill':    { name: 'Treadmill', br: 'Star Trac', photo: '/thumbs/IMG_7594.jpg' },
-  'stair-climber': { name: 'Stair climber', br: 'StairMaster Gauntlet', photo: '/thumbs/IMG_7596.jpg' },
+  'stair-climber': { name: 'Stair Climber', br: 'StairMaster Gauntlet', photo: '/thumbs/IMG_7596.jpg' },
   'rower':        { name: 'Rower', br: 'Rail / magnetic resistance', photo: '/thumbs/IMG_7595.jpg' },
-  'fan-rower':    { name: 'Fan rower', br: 'Air resistance (Assault-style)', photo: '/thumbs/IMG_7595.jpg' },
-  'dip-tower':    { name: 'Dip / knee-raise tower', br: 'FUEL · captain’s chair — dips, vertical knee raises', photo: '/thumbs/IMG_7586.jpg' },
-  'gymrax':       { name: 'Functional rig + free weights', br: 'Hex DBs, spin-lock DBs, kettlebell, wall/med balls (8 lb / 3.6 kg), 55 cm ball, rings, foam rollers, step, bands', photo: '/thumbs/IMG_7604.jpg' },
+  'fan-rower':    { name: 'Fan Rower', br: 'Air resistance (Assault-style)', photo: '/thumbs/IMG_7595.jpg' },
+  'dip-tower':    { name: 'Dip / Knee-raise Tower', br: 'FUEL · captain’s chair — dips, vertical knee raises', photo: '/thumbs/IMG_7586.jpg' },
+  'gymrax':       { name: 'Free-weight Rig', br: 'Gym Rax · hex DBs, spin-lock DBs, kettlebell, wall/med balls (8 lb / 3.6 kg), 55 cm ball, rings, foam rollers, step, bands', photo: '/thumbs/IMG_7604.jpg' },
 } as const
 
 export type EquipmentId = keyof typeof equipment
@@ -71,7 +71,8 @@ export interface DayItem {
   name?: string
   primary?: string
   secondary?: readonly string[]
-  equip: string
+  /** short setup cue shown after the canonical equipment name */
+  hint?: string
   gear: EquipmentId
   sets: string
   star?: boolean
@@ -88,46 +89,46 @@ export interface Day {
 
 export const days: Day[] = [
   { id: 'd1', slug: 'push', name: 'Push', focus: 'CHEST·SHLDR·TRI', sets: 22, time: '55–65 min', items: [
-    { ex: 'bench-press',      equip: 'Freedom Rack',               gear: 'freedom-rack', sets: '4 × 5–8' },
-    { ex: 'incline-db-press', equip: 'Rack bench (incline) + dumbbells', gear: 'freedom-rack', sets: '3 × 8–12' },
-    { ex: 'cable-flye',       equip: 'Nautilus functional trainer', gear: 'nautilus-ft', sets: '3 × 12–15' },
-    { ex: 'overhead-press',   equip: 'Technogym OH Press',         gear: 'tg-press',     sets: '3 × 8–12' },
-    { ex: 'lateral-raise',    equip: 'Nautilus, single-arm',       gear: 'nautilus-ft',  sets: '4 × 12–20', star: true },
-    { ex: 'triceps-pushdown', equip: 'Nautilus cable',             gear: 'nautilus-ft',  sets: '3 × 10–15' },
-    { ex: 'overhead-triceps', equip: 'Nautilus cable',             gear: 'nautilus-ft',  sets: '2 × 12–15' },
+    { ex: 'bench-press',      gear: 'freedom-rack', sets: '4 × 5–8' },
+    { ex: 'incline-db-press', gear: 'freedom-rack', hint: 'incline bench + DBs', sets: '3 × 8–12' },
+    { ex: 'cable-flye',       gear: 'nautilus-ft',  sets: '3 × 12–15' },
+    { ex: 'overhead-press',   gear: 'tg-press',     sets: '3 × 8–12' },
+    { ex: 'lateral-raise',    gear: 'nautilus-ft',  hint: 'single-arm', sets: '4 × 12–20', star: true },
+    { ex: 'triceps-pushdown', gear: 'nautilus-ft',  hint: 'rope', sets: '3 × 10–15' },
+    { ex: 'overhead-triceps', gear: 'nautilus-ft',  hint: 'rope, overhead', sets: '2 × 12–15' },
   ]},
   { id: 'd2', slug: 'pull', name: 'Pull', focus: 'BACK·BI·R.DELT', sets: 20, time: '50–60 min', items: [
-    { ex: 'barbell-row',  equip: 'Freedom Rack',           gear: 'freedom-rack', sets: '4 × 6–10' },
-    { ex: 'lat-pulldown', equip: 'Technogym High Pull',    gear: 'tg-pulls',     sets: '4 × 8–12' },
-    { ex: 'seated-row',   equip: 'Technogym Low Pull',     gear: 'tg-pulls',     sets: '3 × 8–12' },
-    { ex: 'face-pull',    equip: 'Nautilus cable (rope)',  gear: 'nautilus-ft',  sets: '3 × 15–20', star: true },
-    { ex: 'incline-curl', equip: 'Rack bench (incline) + dumbbells', gear: 'freedom-rack', sets: '3 × 10–12' },
-    { ex: 'hammer-curl',  equip: 'Dumbbells or cable',     gear: 'gymrax',       sets: '3 × 10–12' },
+    { ex: 'barbell-row',  gear: 'freedom-rack', sets: '4 × 6–10' },
+    { ex: 'lat-pulldown', gear: 'tg-pulls',     hint: 'high pull', sets: '4 × 8–12' },
+    { ex: 'seated-row',   gear: 'tg-pulls',     hint: 'low pull', sets: '3 × 8–12' },
+    { ex: 'face-pull',    gear: 'nautilus-ft',  hint: 'rope', sets: '3 × 15–20', star: true },
+    { ex: 'incline-curl', gear: 'freedom-rack', hint: 'incline bench + DBs', sets: '3 × 10–12' },
+    { ex: 'hammer-curl',  gear: 'gymrax',       hint: 'DBs or cable', sets: '3 × 10–12' },
   ]},
   { id: 'd3', slug: 'legs', name: 'Legs', focus: 'QUAD·HAM·CALF', sets: 17, time: '50–60 min', items: [
-    { ex: 'squat',         equip: 'Freedom Rack',             gear: 'freedom-rack', sets: '4 × 5–8' },
-    { ex: 'leg-press',     equip: 'Technogym Leg Press',      gear: 'tg-legpress',  sets: '3 × 10–12' },
-    { ex: 'leg-extension', equip: 'Technogym',                gear: 'tg-legext',    sets: '3 × 12–15' },
-    { ex: 'leg-curl',      equip: 'Technogym',                gear: 'tg-legext',    sets: '3 × 10–12' },
-    { ex: 'calf-raise',    equip: 'Leg press / calf setting', gear: 'tg-legpress',  sets: '4 × 12–20' },
+    { ex: 'squat',         gear: 'freedom-rack', sets: '4 × 5–8' },
+    { ex: 'leg-press',     gear: 'tg-legpress',  sets: '3 × 10–12' },
+    { ex: 'leg-extension', gear: 'tg-legext',    sets: '3 × 12–15' },
+    { ex: 'leg-curl',      gear: 'tg-legext',    sets: '3 × 10–12' },
+    { ex: 'calf-raise',    gear: 'tg-legpress',  hint: 'calf setting', sets: '4 × 12–20' },
   ]},
   { id: 'd4', slug: 'upper', name: 'Upper', focus: 'DELT/ARM', sets: 23, time: '55–60 min', items: [
-    { ex: 'overhead-press', name: 'Barbell Overhead Press', equip: 'Freedom Rack',        gear: 'freedom-rack', sets: '4 × 6–10' },
-    { ex: 'lat-pulldown',   name: 'Wide Lat Pulldown',      equip: 'Technogym High Pull', gear: 'tg-pulls',     sets: '3 × 10–12' },
-    { name: 'Incline Chest Press', primary: 'Upper chest', secondary: ['Shoulders'], equip: 'Machine or rack bench', gear: 'freedom-rack', sets: '3 × 8–12' },
-    { ex: 'lateral-raise',  equip: 'Nautilus cable',        gear: 'nautilus-ft', sets: '4 × 15–20', star: true },
-    { ex: 'seated-row',     name: 'Cable Row',              equip: 'Technogym Low Pull', gear: 'tg-pulls', sets: '3 × 10–12' },
-    { ex: 'incline-curl',   name: 'Superset: Curl + Pushdown', secondary: ['Triceps'], equip: 'Nautilus cable', gear: 'nautilus-ft', sets: '3 × 12 ea' },
-    { ex: 'face-pull',      equip: 'Nautilus cable',        gear: 'nautilus-ft', sets: '3 × 20' },
+    { ex: 'overhead-press', name: 'Barbell Overhead Press', gear: 'freedom-rack', sets: '4 × 6–10' },
+    { ex: 'lat-pulldown',   name: 'Wide Lat Pulldown', gear: 'tg-pulls', hint: 'high pull, wide grip', sets: '3 × 10–12' },
+    { name: 'Incline Chest Press', primary: 'Upper chest', secondary: ['Shoulders'], gear: 'freedom-rack', hint: 'incline bench, or machine', sets: '3 × 8–12' },
+    { ex: 'lateral-raise',  gear: 'nautilus-ft', hint: 'single-arm', sets: '4 × 15–20', star: true },
+    { ex: 'seated-row',     name: 'Cable Row', gear: 'tg-pulls', hint: 'low pull', sets: '3 × 10–12' },
+    { ex: 'incline-curl',   name: 'Superset: Curl + Pushdown', secondary: ['Triceps'], gear: 'nautilus-ft', sets: '3 × 12 ea' },
+    { ex: 'face-pull',      gear: 'nautilus-ft', hint: 'rope', sets: '3 × 20' },
   ]},
   { id: 'd5', slug: 'lower-plus', name: 'Lower+', focus: 'LEG·ARM·CORE', sets: 22, time: '55–60 min', items: [
-    { ex: 'rdl',           equip: 'Freedom Rack',        gear: 'freedom-rack', sets: '4 × 6–10' },
-    { ex: 'leg-press',     name: 'Leg Press (wide stance)', equip: 'Technogym', gear: 'tg-legpress', sets: '3 × 10–12' },
-    { ex: 'leg-curl',      equip: 'Technogym',           gear: 'tg-legext',   sets: '3 × 12' },
-    { ex: 'leg-extension', equip: 'Technogym',           gear: 'tg-legext',   sets: '3 × 15' },
-    { ex: 'calf-raise',    equip: 'Leg press / calf',    gear: 'tg-legpress', sets: '4 × 15' },
-    { ex: 'hammer-curl',   name: 'Arm Giant Set: Curl+Hammer+OH Tri', secondary: ['Triceps'], equip: 'Cables / dumbbells', gear: 'gymrax', sets: '3–4 rds' },
-    { name: 'Core: Rollout · Knee Raise · Crunch', primary: 'Core', secondary: ['Abs'], equip: 'Gym Rax rings, cable', gear: 'gymrax', sets: '3 × 10–15' },
+    { ex: 'rdl',           gear: 'freedom-rack', sets: '4 × 6–10' },
+    { ex: 'leg-press',     name: 'Leg Press (wide stance)', gear: 'tg-legpress', hint: 'wide stance', sets: '3 × 10–12' },
+    { ex: 'leg-curl',      gear: 'tg-legext',   sets: '3 × 12' },
+    { ex: 'leg-extension', gear: 'tg-legext',   sets: '3 × 15' },
+    { ex: 'calf-raise',    gear: 'tg-legpress', hint: 'calf setting', sets: '4 × 15' },
+    { ex: 'hammer-curl',   name: 'Arm Giant Set: Curl+Hammer+OH Tri', secondary: ['Triceps'], gear: 'gymrax', hint: 'cables / DBs', sets: '3–4 rds' },
+    { name: 'Core: Rollout · Knee Raise · Crunch', primary: 'Core', secondary: ['Abs'], gear: 'gymrax', hint: 'rings, cable', sets: '3 × 10–15' },
   ]},
 ]
 

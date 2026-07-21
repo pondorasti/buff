@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { itemName, itemPrimary, itemSecondary, type DayItem } from '~/data'
+import { equipment, itemName, itemPrimary, itemSecondary, type DayItem } from '~/data'
 
 /** The routine-day exercise table. Rows with an `ex` id link to /exercise/$id
     via a stretched link (real <a>, whole row clickable). */
@@ -77,7 +77,10 @@ function Row({ item }: { item: DayItem }) {
           nameBlock
         )}
       </td>
-      <td className="px-[15px] py-3 text-[12.5px] text-muted">{item.equip}</td>
+      <td className="px-[15px] py-3 text-[12.5px] text-muted">
+        {equipment[item.gear].name}
+        {item.hint ? <span className="text-dim"> · {item.hint}</span> : null}
+      </td>
       <td className="whitespace-nowrap px-[15px] py-3 text-right text-[13.5px] font-bold tabular-nums text-accent">
         {item.sets}
       </td>
