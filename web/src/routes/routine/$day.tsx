@@ -37,9 +37,7 @@ function RoutineDay() {
         <div className="mt-4 rounded-card border border-warn-line bg-warn-tint px-4 py-3.5">
           <b className="text-warn">Freedom Rack = your new anchor</b>
           <p className="mt-[3px] text-[13px] text-muted">
-            Each day now opens with a barbell compound on the Freedom Rack — the best single driver for size and
-            strength. Dumbbells still cap at ~<b className="text-txt">11 kg / 25 lb</b>, so keep curls and incline work
-            on cables or the barbell.
+            Each day opens with a barbell compound on the Freedom Rack — the best single driver for size and strength.
           </p>
         </div>
 

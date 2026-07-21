@@ -94,10 +94,6 @@ function Loads() {
             these targets should climb with it.
           </p>
         </div>
-        <div className="mt-[18px] rounded-xl border border-line bg-panel px-[15px] py-[13px] text-[12.5px] text-muted">
-          Reminder: your gym's dumbbells cap at 25 lb / ~11 kg — for curls and incline press you'll hit that ceiling
-          fast, so switch those to <b className="text-txt">cables</b> to keep loading past the DB limit.
-        </div>
       </Pad>
     </>
   )
