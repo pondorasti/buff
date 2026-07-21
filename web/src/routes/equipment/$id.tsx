@@ -17,7 +17,7 @@ function EquipmentPage() {
 
   return (
     <>
-      <ScreenHeader title={eq.name} tag="your gym" />
+      <ScreenHeader title={eq.name} />
       <Pad>
         <div className="flex flex-col gap-5 md:flex-row md:items-start">
           <div className="w-full max-w-[420px] flex-none">

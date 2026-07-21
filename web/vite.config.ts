@@ -26,6 +26,11 @@ export default defineConfig({
         crawlLinks: true,
         autoSubfolderIndex: true,
         failOnError: true,
+        // localhost fetches occasionally lose the IPv6/IPv4 dual-stack race
+        // on macOS — fewer concurrent connections + patient retries fix it
+        concurrency: 4,
+        retryCount: 5,
+        retryDelay: 1000,
       },
       pages,
     }),
