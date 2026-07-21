@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
-import { equipment, exerciseUsage, getExercise, itemName, loadsForExercise } from '~/data'
+import { equipment, exerciseUsage, getExercise, loadsForExercise } from '~/data'
 import { ScreenHeader, Pad, BlockTitle } from '~/components/ScreenHeader'
 
 export const Route = createFileRoute('/exercise/$id')({
@@ -56,7 +56,7 @@ function ExercisePage() {
                 <thead>
                   <tr>
                     <th className="bg-panel-2 px-[15px] py-3 text-left text-[10.5px] font-bold uppercase tracking-[0.08em] text-dim">Day</th>
-                    <th className="bg-panel-2 px-[15px] py-3 text-left text-[10.5px] font-bold uppercase tracking-[0.08em] text-dim">As</th>
+                    <th className="bg-panel-2 px-[15px] py-3 text-left text-[10.5px] font-bold uppercase tracking-[0.08em] text-dim">Equipment</th>
                     <th className="bg-panel-2 px-[15px] py-3 text-right text-[10.5px] font-bold uppercase tracking-[0.08em] text-dim">Sets × Reps</th>
                   </tr>
                 </thead>
@@ -70,7 +70,8 @@ function ExercisePage() {
                       </td>
                       <td className="px-[15px] py-3 text-[12.5px] text-muted">
                         {item.star ? <span className="text-accent">★ </span> : null}
-                        {itemName(item)}
+                        {equipment[item.gear].name}
+                        {item.hint ? <span className="text-dim"> · {item.hint}</span> : null}
                       </td>
                       <td className="whitespace-nowrap px-[15px] py-3 text-right text-[13.5px] font-bold tabular-nums text-accent">
                         {item.sets}
