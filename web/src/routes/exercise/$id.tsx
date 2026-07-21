@@ -20,7 +20,7 @@ function ExercisePage() {
 
   return (
     <>
-      <ScreenHeader title={ex.name} tag={ex.primary} />
+      <ScreenHeader title={ex.name} />
       <Pad>
         <div className="flex flex-col gap-5 md:flex-row md:items-start">
           {/* demo */}
