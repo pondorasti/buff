@@ -22,7 +22,6 @@ function EquipmentPage() {
         <div className="flex flex-col gap-5 md:flex-row md:items-start">
           <div className="w-full max-w-[420px] flex-none">
             <img src={eq.photo} alt={eq.name} className="aspect-[4/3] w-full rounded-card border border-line bg-panel-2 object-cover" />
-            <p className="mt-3 text-[13.5px] text-muted">{eq.br}</p>
           </div>
 
           <div className="min-w-0 flex-1">
