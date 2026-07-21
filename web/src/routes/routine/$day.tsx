@@ -17,7 +17,7 @@ function RoutineDay() {
   const { day } = Route.useLoaderData()
   return (
     <>
-      <ScreenHeader title="Routine" tag="~60 min / session" />
+      <ScreenHeader title="Routine" />
       <Pad>
         <div className="mb-4">
           <WeekChips activeSlug={day.slug} showFocus />
